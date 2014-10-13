@@ -7,8 +7,8 @@ import (
 )
 
 type Profile struct {
-	Name   string
-	Hobbie []string
+	Name    string
+	Hobbies []string
 }
 
 func main() {
@@ -26,7 +26,7 @@ func foo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := tmpl.Excute(w, profile); err != nil {
+	if err := tmpl.Execute(w, profile); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
