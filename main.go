@@ -26,7 +26,7 @@ func foo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := temp.Excute(w, profile); err != nil {
+	if err := tmpl.Excute(w, profile); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
